@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Picture Reveal.sln"
+    "dotnet.defaultSolution": "picture_reveal_twitch_chat_game.sln"
 }

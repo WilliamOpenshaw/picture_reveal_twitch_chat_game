@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/pictureReveal 0.1.0.unity
-    guid: ef8a3b311ba069d478d3c14be41f359f
+    path: Assets/Scenes/pictureReveal 0.1.2.unity
+    guid: 68a8e5875726b4b47b51683adfd8a9b3
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

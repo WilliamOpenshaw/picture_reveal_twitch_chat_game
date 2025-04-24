@@ -100,7 +100,8 @@ public class gridController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             // set cursor to random position in grid
-            cursorRect.anchoredPosition = new Vector2(Random.Range(0, gridSizeX) * cellSizeX, Random.Range(0, gridSizeY) * -cellSizeY);
+            cursorRect.anchoredPosition = new Vector2(  (Random.Range(0, gridSizeX) * cellSizeX) + (sizeDeltaX/2), 
+                                                        (Random.Range(0, gridSizeY) * -cellSizeY) - (sizeDeltaY/2));
         }
 
         // Destroy the grid object at the cursor position
@@ -121,6 +122,51 @@ public class gridController : MonoBehaviour
         {
             // quit application
             Application.Quit();
+        }
+        // if press b key, change all gridcells in grid to black
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            for (int x = 0; x < gridSizeX; x++)
+            {
+                for (int y = 0; y < gridSizeY; y++)
+                {
+                    // if gridcell is null, continue
+                    if (grid[x, y] == null) continue; // Skip to the next iteration if the grid cell is null
+                    // Set the color of the grid object to a random color
+                    Color randomColor = new Color(0, 0, 0, 1.0f);
+                    grid[x, y].GetComponent<UnityEngine.UI.Image>().color = randomColor;
+                }
+            }
+        }
+        // if press v key, change all gridcells in grid to random color
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            for (int x = 0; x < gridSizeX; x++)
+            {
+                for (int y = 0; y < gridSizeY; y++)
+                {
+                    // if gridcell is null, continue
+                    if (grid[x, y] == null) continue; // Skip to the next iteration if the grid cell is null
+                    // Set the color of the grid object to a random color
+                    Color randomColor = new Color(Random.value, Random.value, Random.value, 1.0f);
+                    grid[x, y].GetComponent<UnityEngine.UI.Image>().color = randomColor;
+                }
+            }
+        }
+        // if press g key , change all gridcells in grid to one random color
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            // Set the color of the grid object to a random color
+            Color randomColor = new Color(Random.value, Random.value, Random.value, 1.0f);
+            for (int x = 0; x < gridSizeX; x++)
+            {
+                for (int y = 0; y < gridSizeY; y++)
+                {
+                    // if gridcell is null, continue
+                    if (grid[x, y] == null) continue; // Skip to the next iteration if the grid cell is null
+                    grid[x, y].GetComponent<UnityEngine.UI.Image>().color = randomColor;
+                }
+            }
         }
     }
     public void DrawGrid()
@@ -169,7 +215,9 @@ public class gridController : MonoBehaviour
                 // Set the name of the grid object for easier identification in the hierarchy
                 gridCell.name = "GridCell_" + x + "_" + y;
                 // Set the color of the grid object to a random color
-                Color randomColor = new Color(Random.value, Random.value, Random.value, 1.0f);
+                //Color randomColor = new Color(Random.value, Random.value, Random.value, 1.0f);
+                // Set the color of the grid object to a black color
+                Color randomColor = new Color(0, 0, 0, 1.0f);
                 gridCell.GetComponent<UnityEngine.UI.Image>().color = randomColor;
                 // Store the reference to the grid object in the array
                 grid[x, y] = gridCell;
@@ -224,8 +272,10 @@ public class gridController : MonoBehaviour
                 rectTransform.sizeDelta = new Vector2(sizeDeltaX, sizeDeltaY);
                 // Set the name of the grid object for easier identification in the hierarchy
                 gridCell.name = "GridCell_" + x + "_" + y;
-                // Set the color of the grid object to a random color
-                Color randomColor = new Color(Random.value, Random.value, Random.value, 1.0f);
+                 // Set the color of the grid object to a random color
+                //Color randomColor = new Color(Random.value, Random.value, Random.value, 1.0f);
+                // Set the color of the grid object to a black color
+                Color randomColor = new Color(0, 0, 0, 1.0f);
                 gridCell.GetComponent<UnityEngine.UI.Image>().color = randomColor;
                 // Store the reference to the grid object in the array
                 grid[x, y] = gridCell;

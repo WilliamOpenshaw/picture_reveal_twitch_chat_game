@@ -52,3 +52,9 @@ R - changes red box cursor location to a random location
 U - reloads the game
 
 M - quits/closes the game
+
+B - set all blocks to black
+
+V - set all blocks to separate new random colors
+
+G - set all block to one uniform random color
