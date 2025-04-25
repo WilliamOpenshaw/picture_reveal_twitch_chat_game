@@ -168,6 +168,40 @@ public class gridController : MonoBehaviour
                 }
             }
         }
+        // if press t key, increase gridsize by one for x and y and redraw
+        if (Input.GetKeyDown(KeyCode.T) && gridSizeX < 60 && gridSizeY > 60)
+        {
+            //destroy all grid cells in grid array
+            for (int x = 0; x < prevGridSizeX; x++)
+            {
+                for (int y = 0; y < prevGridSizeY; y++)
+                {
+                    Destroy(grid[x, y]); // Destroy the grid object at the cursor position
+                    grid[x, y] = null; // Set the reference to null after destroying
+                }
+            }
+            grid = null; // Set the reference to null after destroying
+            gridSizeX++; // Increase the grid size in the X direction
+            gridSizeY++; // Increase the grid size in the Y direction
+            DrawGrid(); // Call the DrawGrid method to create the grid        
+        }
+        // if press Y key, decrease gridsize by one for x and y and redraw
+        if (Input.GetKeyDown(KeyCode.Y) && gridSizeX > 2 && gridSizeY > 2)
+        {
+            //destroy all grid cells in grid array
+            for (int x = 0; x < prevGridSizeX; x++)
+            {
+                for (int y = 0; y < prevGridSizeY; y++)
+                {
+                    Destroy(grid[x, y]); // Destroy the grid object at the cursor position
+                    grid[x, y] = null; // Set the reference to null after destroying
+                }
+            }
+            grid = null; // Set the reference to null after destroying
+            gridSizeX--; // Increase the grid size in the X direction
+            gridSizeY--; // Increase the grid size in the Y direction
+            DrawGrid(); // Call the DrawGrid method to create the grid        
+        }
     }
     public void DrawGrid()
     {

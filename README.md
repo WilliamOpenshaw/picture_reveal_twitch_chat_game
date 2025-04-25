@@ -58,3 +58,7 @@ B - set all blocks to black
 V - set all blocks to separate new random colors
 
 G - set all block to one uniform random color
+
+T - Increase Block Matrix Density by one for height and width ( Example: from 12x12 blocks to 13x13 blocks)
+
+Y - Decrease Block Matrix Density by one for height and width ( Example: from 12x12 blocks to 11x11 blocks)
